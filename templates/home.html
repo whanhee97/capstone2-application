@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div>
+      <h1>{{location}}</h1>
+    </div>
+    <div>
+      <h2>메뉴검색</h2>
+      <form action="/findByMenu" method="get"> 
+        <input type="text" name="keyword" placeholder="메뉴 이름">
+        <input type="submit" value="검색">
+      </form>
+    </div>
+    <div>
+      <h2>음식점으로 검색</h2>
+      <ul>
+        {% for restaurant in restaurant_list %}
+        <li>{{ restaurant }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
