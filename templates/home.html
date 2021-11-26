@@ -19,7 +19,7 @@
       <h2>음식점으로 검색</h2>
       <ul>
         {% for restaurant in restaurant_list %}
-        <li>{{ restaurant }}</li>
+        <li><a href="/findByRestaurant/{{ restaurant }}">{{ restaurant }}</a></li>
         {% endfor %}
       </ul>
     </div>

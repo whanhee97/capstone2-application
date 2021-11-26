@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body>
+    <div>
+      <h1>소비자들이 평가한 {{ restaurant }} 의 특징</h1>
+    </div>
+    <div>
+        <p>토픽 : </p><h2>{{result[0][0]}}</h2>
+        <p>키워드 : {{result[0][1]}}</p>
+        <p>스코어 : {{result[0][2]}}</p>
+    </div>
+    <div>
+        <p>토픽 : </p><h2>{{result[1][0]}}</h2>
+        <p>키워드 : {{result[1][1]}}</p>
+        <p>스코어 : {{result[1][2]}}</p>
+    </div>
+    <div>
+        <p>토픽 : </p><h2>{{result[2][0]}}</h2>
+        <p>키워드 : {{result[2][1]}}</p>
+        <p>스코어 : {{result[2][2]}}</p>
+    </div>
+    <div>
+        <h1>소비자들이 평가한 {{ restaurant }} 의 아쉬운 점</h1>
+    </div>
+    <div>
+        <p>토픽 : </p><h2>{{result2[0][0]}}</h2>
+        <p>키워드 : {{result2[0][1]}}</p>
+        <p>스코어 : {{result2[0][2]}}</p>
+    </div>
+    <div>
+        <p>토픽 : </p><h2>{{result2[1][0]}}</h2>
+        <p>키워드 : {{result2[1][1]}}</p>
+        <p>스코어 : {{result2[1][2]}}</p>
+    </div>
+    <div>
+        <p>토픽 : </p><h2>{{result2[2][0]}}</h2>
+        <p>키워드 : {{result2[2][1]}}</p>
+        <p>스코어 : {{result2[2][2]}}</p>
+    </div>
+
+    <div>
+        <h1>Topics</h1>
+
+        {% for topic in topics %}
+        <h2>Topic {{topic[0]}}</h2>
+        <p>주제 : {{topic[1]}}</p>
+        <p>단어 분포</p>
+        <ul>
+            {% for w,p in topic[2] %}
+            <p>{{w}} : {{p}}</p>
+            {% endfor %}
+        </ul>
+
+        {% endfor %}
+    </div>
+
+    <div>
+        <h1>Topics(아쉬운 점)</h1>
+
+        {% for topic in topics2 %}
+        <h2>Topic {{topic[0]}}</h2>
+        <p>주제 : {{topic[1]}}</p>
+        <p>단어 분포</p>
+        <ul>
+            {% for w,p in topic[2] %}
+            <p>{{w}} : {{p}}</p>
+            {% endfor %}
+        </ul>
+
+        {% endfor %}
+    </div>
+
+    
+  </body>
+</html>
