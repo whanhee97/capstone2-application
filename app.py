@@ -213,15 +213,25 @@ def menu_result():
             element_count.setdefault(item, 0)
             element_count[item] += 1
 
-        r_l = list(element_count.keys())
         result = []
         for i in range(3):
             topic = int(sdict[i][0])
+
+            condition = df_topic_review['Dominant_Topic'] == topic
+            topdf = df_topic_review[condition]
+            element_count = {}
+
+            for item in topdf['지점명']:
+                element_count.setdefault(item, 0)
+                element_count[item] += 1
+
+            rs = list(element_count.items())
+            rs.sort(key=lambda x: x[1], reverse=True)
+            best_rest = rs[0]
             score = round(sdict[i][1], 4)
             res = optimal_model.get_topic_words(topic, top_n=10)
             label = labels_per_topic[topic]
             keywords = ', '.join(w for w, p in res)
-            best_rest = random.choices(r_l)
             result.append([label, keywords, score, best_rest])
 
         # topics => [토픽번호, 레이블, 키워드와 분포리스트]
