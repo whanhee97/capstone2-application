@@ -3,49 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <title>Title</title>
+    <link rel="stylesheet" href="../static/css/style.css">
   </head>
   <body>
-    <div>
-      <h1>{{location}} 인근 주민들이</h1>
-      <h1>{{menu}}을 시킬때 고려하는 것</h1>
+
+    <!-- start top -->
+    <div class="section-top">
+      <div class="inner">
+        <div class="logo">
+          <img src="logo-yogiyo.png" alt="">
+        </div>
+        <h1 class="title-main">
+          {{location}} 인근 주민들이
+          <span>{{menu}}을 시킬때 고려하는 것</span>
+        </h1>
+      </div>
     </div>
-    <div>
-        <h1>순위</h1>
-        <div>
-            <h2>TOP1</h2>
-            <p>토픽 : {{result[0][0]}}</p>
-            <p>키워드 : {{result[0][1]}}</p>
-            <p>스코어 : {{result[0][2]}}</p>
-            <p>이 토픽이 가장 많이 할당된 음식점 : </p> <h3>{{result[0][3][0]}}</h3>
+    <!-- end top -->
+  
 
-            <h2>TOP2</h2>
-            <p>토픽 : {{result[1][0]}}</p>
-            <p>키워드 : {{result[1][1]}}</p>
-            <p>스코어 : {{result[1][2]}}</p>
-            <p>이 토픽이 가장 많이 할당된 음식점 : </p> <h3>{{result[1][3][0]}}</h3>
+    <!-- start rank -->
+    <div class="section-ranking">
 
-            <h2>TOP3</h2>
-            <p>토픽 : {{result[2][0]}}</p>
-            <p>키워드 : {{result[2][1]}}</p>
-            <p>스코어 : {{result[2][2]}}</p>
-            <p>이 토픽이 가장 많이 할당된 음식점 : </p> <h3>{{result[2][3][0]}}</h3>
+      <!-- start inner -->
+      <div class="inner">
+        <h1 class="title-sub">순위</h1>
+        <div class="wrap-rank">
+
+          <!-- start -->
+          <div class="box-rank">
+            <h2 class="title-rank">TOP1</h2>
+            <dl class="desc-rank">
+              <dt>토픽</dt>
+              <dd>{{result[0][0]}}</dd>
+              <dt>키워드</dt>
+              <dd>{{result[0][1]}}</dd>
+              <dt>스코어</dt>
+              <dd>{{result[0][2]}}</dd>
+              <dt class="tit-store">이 토픽이 가장 많이 할당된 음식점</dt>
+              <dd class="txt-store">{{result[0][3][0]}}</dd>
+            </dl>
+          </div>
+          <!-- end -->
+
+          <!-- start -->
+          <div class="box-rank">
+            <h2 class="title-rank">TOP2</h2>
+            <dl class="desc-rank">
+              <dt>토픽</dt>
+              <dd>{{result[1][0]}}</dd>
+              <dt>키워드</dt>
+              <dd>{{result[1][1]}}</dd>
+              <dt>스코어</dt>
+              <dd>{{result[1][2]}}</dd>
+              <dt class="tit-store">이 토픽이 가장 많이 할당된 음식점</dt>
+              <dd class="txt-store">{{result[1][3][0]}}</dd>
+            </dl>
+          </div>
+          <!-- end -->
+
+          <!-- start -->
+          <div class="box-rank">
+            <h2 class="title-rank">TOP3</h2>
+            <dl class="desc-rank">
+              <dt>토픽</dt>
+              <dd>{{result[2][0]}}</dd>
+              <dt>키워드</dt>
+              <dd>{{result[2][1]}}</dd>
+              <dt>스코어</dt>
+              <dd>{{result[2][2]}}</dd>
+              <dt class="tit-store">이 토픽이 가장 많이 할당된 음식점</dt>
+              <dd class="txt-store">{{result[2][3][0]}}</dd>
+            </dl>
+          </div>
+          <!-- end -->
 
         </div>
+      </div>
+      <!-- end inner -->
     </div>
-    <div>
-        <h1>Topics</h1>
-
+    <!-- end rank -->
+    <!-- start topics -->
+    <div class="section-topics">
+      <div class="inner">
+        <h1 class="title-sub">Topics</h1>
         {% for topic in topics %}
-        <h2>Topic {{topic[0]}}</h2>
-        <p>주제 : {{topic[1]}}</p>
-        <p>단어 분포</p>
-        <ul>
-            {% for w,p in topic[2] %}
-            <p>{{w}} : {{p}}</p>
-            {% endfor %}
-        </ul>
-
+        <!-- start -->
+        <h2 class="tit-topic">Topic {{topic[0]}}</h2>
+        <div class="table-topic">
+          <div class="table-head">
+            주제
+          </div>
+          <div class="table-body">
+            {{topic[1]}}
+          </div>
+        </div>
+        <div class="table-topic">
+          <div class="table-head">
+            단어분포
+          </div>
+          <div class="table-body">
+            <ul>
+              {% for w,p in topic[2] %}
+              <p>{{w}} : {{p}}</p>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <!-- end -->
         {% endfor %}
+      </div>
     </div>
+  <!-- end topics -->
   </body>
 </html>

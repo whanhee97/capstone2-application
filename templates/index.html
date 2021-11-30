@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="../static/css/index.css" />
     <meta charset="UTF-8" />
     <title>Title</title>
   </head>
   <body>
-    <div>
-      <h1>요기요 리뷰 분석</h1>
+    <div class="section-top">
+      <div class="inner">
+        <div class="logo">
+          <img src="logo-yogiyo.png" alt="" />
+        </div>
+        <h1 class="title-main">요기요 리뷰 분석</h1>
+      </div>
     </div>
-    <div>
+    <div class="section-ranking">
       <form action="/home" method="get">
         <input type="hidden" name="location" value="경희대 국제캠퍼스" />
-        <input type="submit" value="경희대 국제캠퍼스" />
+        <input class="loc-btn" type="submit" value="경희대 국제캠퍼스" />
       </form>
+
       <form action="/home" method="get">
         <input type="hidden" name="location" value="경기도 의왕시 청계동" />
-        <input type="submit" value="경기도 의왕시 청계동" />
+        <input class="loc-btn" type="submit" value="경기도 의왕시 청계동" />
       </form>
     </div>
   </body>

@@ -1,3 +1,156 @@
-h1 {
-  color: blue;
+* {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.logo {
+  display: flex;
+  width: 80px;
+  margin-bottom: 80px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.inner {
+  max-width: 1024px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
+.section-top {
+  background: #f10e50;
+  padding: 120px 0;
+}
+
+.title-main {
+  font-size: 64px;
+  color: #fff;
+}
+
+.title-main span {
+  display: block;
+}
+
+.section-top.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+}
+
+.section-top.fixed .inner {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section-top.fixed .logo {
+  margin: 0;
+  width: 60px;
+}
+
+.section-top.fixed .title-main {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.section-top.fixed .title-main span {
+  display: inline-block;
+}
+
+.section-ranking {
+  padding: 160px 0 0;
+}
+
+.title-sub {
+  font-size: 46px;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.box-rank {
+  display: flex;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid #eee;
+}
+
+.title-rank {
+  flex: 1;
+  font-size: 72px;
+  color: #f10e50;
+  font-weight: 900;
+}
+
+.desc-rank {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.desc-rank dt {
+  font-weight: 700;
+  font-size: 20px;
+}
+.desc-rank dd {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.desc-rank .tit-store {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 30px;
+}
+
+.desc-rank .txt-store {
+  font-size: 32px;
+  font-weight: 700;
+  color: #f10e50;
+  margin-bottom: 0;
+}
+
+.section-topics {
+  padding: 100px 0 160px;
+}
+
+.tit-topic {
+  font-size: 26px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #000;
+}
+
+.table-topic {
+  display: flex;
+  border-bottom: 1px solid #000;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.table-head {
+  padding: 20px 30px;
+  width: 200px;
+  font-weight: 700;
+  background: #f8f8f8;
+}
+
+.table-body {
+  padding: 20px 30px;
+}
+
+.table-topic + .tit-topic {
+  margin-top: 100px;
 }

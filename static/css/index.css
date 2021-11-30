@@ -1,0 +1,18 @@
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+body {
+  background-color: #f10e50;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.btn-wrapper {
+  display: flex;
+}
+
+.loc-btn {
+  background-color: white;
+  font-weight: bold;
+}
